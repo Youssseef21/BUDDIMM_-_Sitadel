@@ -4,69 +4,61 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Permis 78, cibles Buddimm</title>
-<meta name="description" content="Démo interactive : rejouer la qualification d'un demandeur de permis de construire des Yvelines, explorer les cibles, voir le travail de l'agent IA.">
+<meta name="description" content="Démo : rejouer la qualification d'un demandeur de permis de construire des Yvelines, explorer les cibles, voir le travail de l'agent IA.">
 <style>
-:root{
-  --bg:#f7f6f2;--surface:#fff;--soft:#f0eee8;--text:#1f1e1c;--muted:#5f5e5a;--line:#e2e0d8;
-  --accent:#534ab7;--accent-bg:#eeedfe;--teal:#0f6e56;--teal-bg:#e1f5ee;--amber:#854f0b;--amber-bg:#faeeda;--red:#a32d2d;--red-bg:#fcebeb;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#1a1a19;--surface:#242422;--soft:#2c2c2a;--text:#ecebe6;--muted:#b4b2a9;--line:#3a3a37;
-  --accent:#afa9ec;--accent-bg:#2b2754;--teal:#5dcaa5;--teal-bg:#0c3b30;--amber:#fac775;--amber-bg:#3d2a0c;--red:#f09595;--red-bg:#4a1b1b;}}
-:root[data-theme="dark"]{
-  --bg:#1a1a19;--surface:#242422;--soft:#2c2c2a;--text:#ecebe6;--muted:#b4b2a9;--line:#3a3a37;
-  --accent:#afa9ec;--accent-bg:#2b2754;--teal:#5dcaa5;--teal-bg:#0c3b30;--amber:#fac775;--amber-bg:#3d2a0c;--red:#f09595;--red-bg:#4a1b1b;}
+:root{--paper:#fbfaf7;--ink:#1c1b19;--grey:#6b6a66;--rule:#d9d6cf;--hl:#fff3c4;--rust:#b4441c;--green:#2f6b3f;--panel:#f2efe8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#171614;--ink:#e9e6df;--grey:#a19e97;--rule:#3a3833;--hl:#4a3f12;--rust:#f08a5d;--green:#7cc08a;--panel:#211f1c}}
+:root[data-theme="dark"]{--paper:#171614;--ink:#e9e6df;--grey:#a19e97;--rule:#3a3833;--hl:#4a3f12;--rust:#f08a5d;--green:#7cc08a;--panel:#211f1c}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:960px;margin:0 auto;padding:32px 16px 56px}
-h1{font-size:28px;line-height:1.2;font-weight:650;margin:0 0 8px;letter-spacing:-.01em}
-h2{font-size:21px;font-weight:650;margin:48px 0 4px}
-h3{font-size:15px;font-weight:650;margin:0}
-.num{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--accent-bg);color:var(--accent);font-size:14px;margin-right:8px;vertical-align:2px}
-.lead{color:var(--muted);margin:0;max-width:700px}
-.sub{color:var(--muted);margin:0 0 14px;max-width:700px}
-nav{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-nav a{font-size:14px;text-decoration:none;color:var(--accent);background:var(--accent-bg);padding:3px 12px;border-radius:999px}
-.mini{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:16px;font-size:13px;color:var(--muted)}
-.mini span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
-.mini span.ia{background:var(--accent-bg);border-color:var(--accent);color:var(--accent)}
-.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px}
-select,input,button{font:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+body{margin:0;background:var(--paper);color:var(--ink);font:15.5px/1.55 "Segoe UI",system-ui,sans-serif}
+main{max-width:920px;margin:0 auto;padding:40px 18px 60px}
+h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:normal;letter-spacing:0}
+h1{font-size:32px;line-height:1.15;margin:0 0 10px}
+h2{font-size:23px;margin:46px 0 6px;padding-bottom:4px;border-bottom:1px solid var(--ink)}
+h2 small{font-family:ui-monospace,Consolas,monospace;font-size:13px;color:var(--grey);margin-right:10px}
+p{margin:0 0 10px}
+.intro{max-width:640px;color:var(--grey)}
+.chain{font-family:ui-monospace,Consolas,monospace;font-size:13px;margin:14px 0 4px}
+.chain b{color:var(--rust);font-weight:normal;text-decoration:underline;text-underline-offset:3px}
+.toc{font-size:14px;margin-top:10px}
+.toc a{margin-right:14px}
+a{color:var(--rust)}
+mark{background:var(--hl);color:inherit;padding:0 2px}
+code,.mono{font-family:ui-monospace,Consolas,monospace;font-size:13px}
+.note{color:var(--grey);font-size:14px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0 14px}
+select,input,button{font:inherit;font-size:14.5px;color:var(--ink);background:var(--paper);border:1px solid var(--ink);border-radius:0;padding:6px 10px}
 select{max-width:100%}
-button{cursor:pointer;background:var(--accent);border-color:var(--accent);color:var(--surface);font-weight:600}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.sim{display:grid;gap:8px}
-.step{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;opacity:.25;transition:opacity .35s}
+button{cursor:pointer;background:var(--ink);color:var(--paper)}
+:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+.steps{border-left:2px solid var(--rule);margin-left:6px}
+.step{position:relative;padding:4px 0 14px 22px;opacity:.2;transition:opacity .3s}
 .step.on{opacity:1}
-.step.off.on{opacity:.6;border-style:dashed}
-.step .n{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:650;background:var(--teal-bg);color:var(--teal)}
-.step.ia .n{background:var(--accent-bg);color:var(--accent)}
-.step p{margin:3px 0;font-size:15px}
-.why{color:var(--muted);font-size:14px}
-code{font-family:ui-monospace,Consolas,monospace;font-size:13px;background:var(--soft);padding:1px 5px;border-radius:4px}
-.permis{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
-.permis td,.permis th{padding:3px 6px;border-bottom:1px solid var(--line);text-align:left}
-.permis th{color:var(--muted);font-weight:600;background:none;position:static}
-ul.pts{margin:4px 0 0;padding-left:18px;font-size:14px}
-.pill{display:inline-block;font-size:13px;padding:1px 10px;border-radius:999px;background:var(--soft);color:var(--muted);white-space:nowrap}
-.pill.ia{background:var(--accent-bg);color:var(--accent)}
-.pill.ok{background:var(--teal-bg);color:var(--teal)}
-.pill.warn{background:var(--amber-bg);color:var(--amber)}
-.pill.no{background:var(--red-bg);color:var(--red)}
-.score{display:inline-grid;place-items:center;min-width:30px;height:26px;padding:0 6px;border-radius:7px;font-weight:650;background:var(--accent-bg);color:var(--accent)}
-.tablewrap{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
-table.t{width:100%;border-collapse:collapse;font-size:15px}
-table.t th{text-align:left;font-size:13px;font-weight:600;color:var(--muted);padding:10px 12px;background:var(--soft);border-bottom:1px solid var(--line);position:sticky;top:0}
-table.t td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-table.t.click tbody tr{cursor:pointer}
-table.t.click tbody tr:hover{background:var(--soft)}
+.step.off.on{opacity:.55}
+.step::before{content:"";position:absolute;left:-7px;top:9px;width:12px;height:12px;background:var(--paper);border:2px solid var(--ink);border-radius:50%}
+.step.ai::before{border-color:var(--rust);background:var(--rust)}
+.step h3{font-size:15px;margin:0 0 2px;font-weight:600}
+.step h3 span{font-family:ui-monospace,Consolas,monospace;font-size:12px;color:var(--grey);font-weight:normal;margin-right:6px}
+.step p{margin:2px 0}
+.quote{border-left:3px solid var(--rust);padding:2px 10px;color:var(--grey);font-style:italic;margin:6px 0}
+ul.pts{margin:4px 0 0;padding-left:18px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th{text-align:left;font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em;color:var(--grey);border-bottom:1px solid var(--ink);padding:6px 8px;background:var(--paper);position:sticky;top:0}
+td{padding:7px 8px;border-bottom:1px solid var(--rule);vertical-align:top}
 td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
-.small{font-size:13px;color:var(--muted)}
-.grp td{background:var(--soft);font-weight:650;font-size:14px}
-a{color:var(--accent)}
-footer{margin-top:48px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
-footer p{margin:4px 0}
-@media (max-width:700px){h1{font-size:24px}.hide-m{display:none}}
+.scroll{max-height:460px;overflow:auto;border-top:1px solid var(--rule)}
+tbody.click tr{cursor:pointer}
+tbody.click tr:hover td{background:var(--panel)}
+.permis td,.permis th{font-size:13px;padding:3px 6px;position:static}
+.sc{font-family:ui-monospace,Consolas,monospace;font-weight:600}
+.lbl{font-size:12.5px;color:var(--grey)}
+.up{color:var(--rust)}
+.same{color:var(--grey)}
+.c-forte{color:var(--green)}.c-moyenne{color:var(--rust)}.c-faible{color:var(--rust)}
+tr.grp td{font-family:Georgia,serif;font-size:15px;border-bottom:1px solid var(--ink);padding-top:16px}
+footer{margin-top:50px;border-top:1px solid var(--rule);padding-top:12px;font-size:13px;color:var(--grey)}
+footer p{margin:3px 0}
+@media (max-width:700px){h1{font-size:26px}.hide-m{display:none}}
 @media (prefers-reduced-motion:reduce){.step{transition:none}}
 </style>
 </head>
@@ -74,67 +66,61 @@ footer p{margin:4px 0}
 <main>
 
 <header>
-  <h1>Démo : qualifier les demandeurs de permis du 78</h1>
-  <p class="lead">Ici, on voit l'outil travailler sur les vraies données. La démarche, les résultats et les limites sont expliqués dans la note jointe.</p>
-  <div class="mini" aria-label="La chaîne de traitement">
-    <span>Permis Sitadel</span>→<span>Règles</span>→<span>Annuaire</span>→<span class="ia">Agent IA, cas difficiles</span>→<span>Score</span>→<span>Humain</span>
-  </div>
-  <nav aria-label="Sections"><a href="#essayer">Essayer</a><a href="#cibles">Les cibles</a><a href="#agent">L'agent IA</a><a href="#regles">Les règles</a></nav>
+  <h1>Permis de construire du 78 :<br>qui construit, et qui intéresse Buddimm ?</h1>
+  <p class="intro">Une démo du prototype sur les vraies données Sitadel. Ma démarche, les résultats et les limites sont dans la note jointe&nbsp;; ici, on peut voir l'outil faire son travail.</p>
+  <p class="chain">permis Sitadel → règles → annuaire → <b>agent IA (cas difficiles)</b> → score → décision humaine</p>
+  <p class="toc"><a href="#essayer">Rejouer un cas</a><a href="#cibles">Les cibles</a><a href="#agent">L'agent IA</a><a href="#regles">Les règles</a></p>
 </header>
 
 <section id="essayer">
-  <h2><span class="num">1</span>Rejouer la chaîne sur un demandeur</h2>
-  <p class="sub">Choisis un demandeur : la page refait, étape par étape, ce que l'outil a fait pour lui. Tu peux aussi cliquer sur une ligne des tableaux plus bas.</p>
-  <div class="row">
+  <h2><small>01</small>Rejouer un cas</h2>
+  <p class="note">Choisis un demandeur, ou clique sur une ligne d'un des tableaux plus bas.</p>
+  <div class="bar">
     <select id="simSel" aria-label="Demandeur"></select>
     <button id="simGo" type="button">Rejouer</button>
   </div>
-  <div class="sim" id="sim" aria-live="polite"></div>
+  <div class="steps" id="sim" aria-live="polite"></div>
 </section>
 
 <section id="cibles">
-  <h2><span class="num">2</span>Explorer les cibles</h2>
-  <p class="sub">Les demandeurs retenus pour Buddimm (score de 3 ou plus), triés du plus au moins pertinent.</p>
-  <div class="row">
+  <h2><small>02</small>Les cibles</h2>
+  <p class="note">Demandeurs avec un score de 3 ou plus, du plus au moins pertinent.</p>
+  <div class="bar">
     <input type="search" id="q" placeholder="Rechercher un nom" aria-label="Rechercher un nom" style="flex:1;min-width:180px">
     <select id="fFam" aria-label="Type de demandeur"><option value="">Tous les types</option></select>
-    <label class="small"><input type="checkbox" id="fMed" style="padding:0"> avec un projet médico-social</label>
-    <span class="small" id="count"></span>
+    <label class="note"><input type="checkbox" id="fMed" style="padding:0"> projet médico-social</label>
+    <span class="note" id="count"></span>
   </div>
-  <div class="tablewrap">
-    <table class="t click">
+  <div class="scroll">
+    <table>
       <thead><tr><th class="r">Score</th><th>Demandeur</th><th class="hide-m">Type</th><th class="r">Permis</th><th class="r hide-m">Dernier</th><th>Fiche</th></tr></thead>
-      <tbody id="tbody"></tbody>
+      <tbody id="tbody" class="click"></tbody>
     </table>
   </div>
 </section>
 
 <section id="agent">
-  <h2><span class="num">3</span>Le travail de l'agent IA</h2>
-  <p class="sub">Les 14 cas que les règles classaient mal ou pas du tout. Pour chacun, l'agent a décidé lui-même quelles fiches de l'annuaire consulter, puis a justifié sa réponse.</p>
-  <div class="tablewrap" style="max-height:none">
-    <table class="t click">
-      <thead><tr><th>Demandeur</th><th class="hide-m">Fiches consultées</th><th>Règles</th><th>Agent IA</th></tr></thead>
-      <tbody id="agentBody"></tbody>
-    </table>
-  </div>
-  <p class="small" id="agentSum" style="margin-top:8px"></p>
+  <h2><small>03</small>L'agent IA</h2>
+  <p class="note">Les 14 cas où les règles hésitaient. L'agent choisit seul les fiches de l'annuaire à consulter, puis justifie sa réponse.</p>
+  <table>
+    <thead><tr><th>Demandeur</th><th class="r hide-m">Fiches</th><th>Règles</th><th>Agent</th></tr></thead>
+    <tbody id="agentBody" class="click"></tbody>
+  </table>
+  <p class="note" id="agentSum" style="margin-top:8px"></p>
 </section>
 
 <section id="regles">
-  <h2><span class="num">4</span>Les 15 règles, et ce qu'elles ont classé</h2>
-  <p class="sub">Testées dans l'ordre : la première qui s'applique gagne. La dernière colonne montre combien de permis chaque règle a classés.</p>
-  <div class="tablewrap" style="max-height:none">
-    <table class="t">
-      <thead><tr><th>#</th><th>Si le demandeur…</th><th>alors c'est…</th><th class="hide-m">Exemple</th><th class="r">Permis</th></tr></thead>
-      <tbody id="rulesBody"></tbody>
-    </table>
-  </div>
+  <h2><small>04</small>Les règles</h2>
+  <p class="note">Testées dans l'ordre, la première qui s'applique gagne. À droite, le nombre de permis que chacune a classés.</p>
+  <table>
+    <thead><tr><th>#</th><th>Si le demandeur…</th><th>alors</th><th class="hide-m">exemple</th><th class="r">permis</th></tr></thead>
+    <tbody id="rulesBody"></tbody>
+  </table>
 </section>
 
 <footer>
-  <p>Sources : <a href="https://www.data.gouv.fr/datasets/liste-des-permis-de-construire-et-autres-autorisations-durbanisme">Sitadel (octobre 2026)</a> et <a href="https://annuaire-entreprises.data.gouv.fr">Annuaire des entreprises</a>. Personnes morales uniquement, aucun nom de personne physique, aucun contact automatique.</p>
-  <p>Page statique : les résultats viennent des scripts du <a href="https://github.com/Youssseef21/BUDDIMM_-_Sitadel">dépôt</a>, la page n'appelle ni l'IA ni l'annuaire. Youssef Harrane.</p>
+  <p>Données : <a href="https://www.data.gouv.fr/datasets/liste-des-permis-de-construire-et-autres-autorisations-durbanisme">Sitadel</a> (octobre 2026) et <a href="https://annuaire-entreprises.data.gouv.fr">annuaire des entreprises</a>. Personnes morales uniquement, aucun nom de personne physique, aucun contact automatique.</p>
+  <p>Page statique : les résultats sortent des scripts du <a href="https://github.com/Youssseef21/BUDDIMM_-_Sitadel">dépôt</a>. Youssef Harrane, novembre 2026.</p>
 </footer>
 </main>
 
@@ -144,26 +130,25 @@ footer p{margin:4px 0}
   const D = window.DATA, $ = s => document.querySelector(s);
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const fmt = n => Number(n).toLocaleString("fr-FR");
-  const NOMS = {"ESS : association / fondation":"Association / fondation","opérateur santé / médico-social privé":"Opérateur médico-social",
-    "bailleur social":"Bailleur social","promoteur / constructeur":"Promoteur","SCI / foncière":"SCI / foncière","entreprise":"Entreprise",
-    "collectivité / établissement public":"Collectivité","exploitation agricole":"Agricole","non déterminé":"Non déterminé"};
+  const NOMS = {"ESS : association / fondation":"association / fondation","opérateur santé / médico-social privé":"opérateur médico-social",
+    "bailleur social":"bailleur social","promoteur / constructeur":"promoteur","SCI / foncière":"SCI / foncière","entreprise":"entreprise",
+    "collectivité / établissement public":"collectivité","exploitation agricole":"agricole","non déterminé":"non déterminé"};
   const nomFam = f => NOMS[f] || f;
-  const conf = c => ({forte:"ok", moyenne:"warn", faible:"no"}[c] || "");
 
   const REGLES = [
-    ["Les certitudes : la forme juridique suffit", [
+    ["La forme juridique suffit", [
       ["R01_CJ_SA_HLM","est une SA d'HLM","bailleur social","SA d'HLM France Habitation"],
       ["R02_CJ_EPIC_LOCAL+APE_LOCATION_LOGEMENT","est un office public qui loue des logements","bailleur social","Mantes Yvelines Habitat"],
       ["R03_CJ_ASSOCIATION_FONDATION","est une association ou une fondation","association / fondation","Fondation Mallet"],
       ["R04_CJ_ORGANISME_SOCIAL","est une mutuelle ou un organisme social","association / fondation","une mutuelle"],
       ["R05_CJ_HOPITAL_PUBLIC","est un hôpital public","collectivité","un centre hospitalier"],
       ["R06_CJ_PERSONNE_PUBLIQUE","est une commune, un département, une région…","collectivité","Commune de Poissy"]]],
-    ["Le cœur de cible de Buddimm", [
+    ["Le médico-social", [
       ["R07_APE_SANTE_MEDICO_SOCIAL","a une activité de santé ou médico-sociale","opérateur médico-social","Orpea, une clinique"]]],
-    ["Les bailleurs sociaux cachés", [
+    ["Les bailleurs qui ne disent pas leur nom", [
       ["R08_NOM_BAILLEUR+APE_IMMOBILIER","a « HLM » ou « loyer modéré » dans son nom","bailleur social","Les Résidences SA d'HLM"],
       ["R08B_PART_LOGEMENT_SOCIAL>=50%","construit plus de 50 % de logements sociaux","bailleur social","Immobilière 3F"]]],
-    ["Le reste, d'après l'activité (revérifié par l'annuaire et l'agent)", [
+    ["Le reste, d'après l'activité déclarée", [
       ["R09_APE_PROMOTION_CONSTRUCTION","fait de la promotion ou de la construction","promoteur","Bouygues Immobilier"],
       ["R10_CJ_OU_APE_AGRICOLE","est une exploitation agricole","agricole","un GAEC"],
       ["R11_CJ_SOCIETE_CIVILE+APE_IMMOBILIER","est une société civile immobilière","SCI / foncière","une SCI familiale"],
@@ -173,21 +158,21 @@ footer p{margin:4px 0}
   const R = D.regles || {};
   let i = 0;
   $("#rulesBody").innerHTML = REGLES.map(([titre, rs]) => `<tr class="grp"><td colspan="5">${esc(titre)}</td></tr>` +
-    rs.map(([id, si, alors, ex]) => `<tr><td class="small">${++i}</td><td>${esc(si)}</td><td><b>${esc(alors)}</b></td><td class="hide-m small">${esc(ex)}</td><td class="r">${fmt(R[id] || 0)}</td></tr>`).join("")).join("");
+    rs.map(([id, si, alors, ex]) => `<tr><td class="mono">${String(++i).padStart(2, "0")}</td><td>${esc(si)}</td><td>${esc(alors)}</td><td class="hide-m note">${esc(ex)}</td><td class="r mono">${fmt(R[id] || 0)}</td></tr>`).join("")).join("");
 
   [...new Set(D.cibles.map(c => c.famille))].sort().forEach(f => $("#fFam").insertAdjacentHTML("beforeend", `<option value="${esc(f)}">${esc(nomFam(f))}</option>`));
   function table(){
     const q = $("#q").value.trim().toLowerCase(), f = $("#fFam").value, med = $("#fMed").checked;
     const rows = D.cibles.filter(c => (!q || c.nom.toLowerCase().includes(q)) && (!f || c.famille === f) && (!med || c.projets));
-    $("#count").textContent = rows.length + " cible(s)";
-    $("#tbody").innerHTML = rows.map(c => `<tr data-s="${c.siren}" tabindex="0"><td class="r"><span class="score">${c.score}</span></td><td><b>${esc(c.nom)}</b></td><td class="hide-m">${esc(nomFam(c.famille))}</td><td class="r">${c.nb_permis}</td><td class="r hide-m">${esc(c.derniere)}</td><td><a href="${esc(c.source)}" target="_blank" rel="noopener">voir</a></td></tr>`).join("");
+    $("#count").textContent = rows.length + " résultat(s)";
+    $("#tbody").innerHTML = rows.map(c => `<tr data-s="${c.siren}" tabindex="0"><td class="r sc">${c.score}</td><td>${esc(c.nom)}</td><td class="hide-m note">${esc(nomFam(c.famille))}</td><td class="r mono">${c.nb_permis}</td><td class="r hide-m mono">${esc(c.derniere)}</td><td><a href="${esc(c.source)}" target="_blank" rel="noopener">fiche</a></td></tr>`).join("");
   }
   ["#q","#fFam","#fMed"].forEach(s => $(s).addEventListener("input", table));
   table();
 
-  $("#agentBody").innerHTML = D.agent.map(a => `<tr data-s="${a.siren}" tabindex="0"><td><b>${esc(a.denomination)}</b><br><span class="small">${esc(a.pourquoi_flou)}</span></td><td class="hide-m">${a.outils_appeles.split(" ; ").length}</td><td>${esc(nomFam(a.famille_regles))}</td><td><b>${esc(nomFam(a.famille_agent))}</b><br>${a.change === "oui" ? '<span class="pill ia">corrige</span> ' : '<span class="pill">confirme</span> '}<span class="pill ${conf(a.confiance_agent)}">${esc(a.confiance_agent)}</span></td></tr>`).join("");
+  $("#agentBody").innerHTML = D.agent.map(a => `<tr data-s="${a.siren}" tabindex="0"><td>${esc(a.denomination)}<br><span class="lbl">${esc(a.pourquoi_flou)}</span></td><td class="r hide-m mono">${a.outils_appeles.split(" ; ").length}</td><td class="note">${esc(nomFam(a.famille_regles))}</td><td>${a.change === "oui" ? `<span class="up">${esc(nomFam(a.famille_agent))}</span>` : `<span class="same">${esc(nomFam(a.famille_agent))} (idem)</span>`}<br><span class="lbl c-${esc(a.confiance_agent)}">confiance ${esc(a.confiance_agent)}</span></td></tr>`).join("");
   const ch = D.agent.filter(a => a.change === "oui").length;
-  $("#agentSum").textContent = `L'agent a corrigé ${ch} classements sur ${D.agent.length}. Point de vigilance : il n'a répondu « non déterminé » sur aucun cas, ce qui suggère un excès de confiance.`;
+  $("#agentSum").innerHTML = `En orange : les ${ch} cas sur ${D.agent.length} où l'agent a corrigé les règles. À surveiller : il n'a jamais répondu « non déterminé », ce qui ressemble à un excès de confiance.`;
 
   const pick = e => { if (e.target.closest("a")) return; const tr = e.target.closest("tr[data-s]"); if (tr) show(tr.dataset.s); };
   ["#tbody","#agentBody"].forEach(s => { $(s).addEventListener("click", pick); $(s).addEventListener("keydown", e => { if (e.key === "Enter") pick(e); }); });
@@ -196,11 +181,10 @@ footer p{margin:4px 0}
   const opt = (s, label) => `<option value="${s}">${esc(label)}</option>`;
   $("#simSel").innerHTML =
     `<optgroup label="Meilleures cibles">${D.cibles.slice(0, 10).map(c => opt(c.siren, c.nom)).join("")}</optgroup>` +
-    `<optgroup label="Cas difficiles traités par l'agent IA">${D.agent.map(a => opt(a.siren, a.denomination)).join("")}</optgroup>`;
+    `<optgroup label="Cas traités par l'agent IA">${D.agent.map(a => opt(a.siren, a.denomination)).join("")}</optgroup>`;
   function ensureOption(s){
     if ([...$("#simSel").options].some(o => o.value === s)) return;
-    const c = byS[s]; if (!c) return;
-    $("#simSel").insertAdjacentHTML("afterbegin", opt(s, c.nom));
+    if (byS[s]) $("#simSel").insertAdjacentHTML("afterbegin", opt(s, byS[s].nom));
   }
   let timers = [];
   function show(s){
@@ -215,24 +199,24 @@ footer p{margin:4px 0}
     const regle = c ? c.regle : a.regle, fam0 = a ? a.famille_regles : c.famille;
     const vu = a || (c && c.annuaire === "oui");
     const steps = [
-      {t:"Les permis (Sitadel)", b: P.length
-        ? `<p>${c.nb_permis} permis dans le 78, de ${esc(c.premiere)} à ${esc(c.derniere)}. Les plus récents :</p><table class="permis"><tr><th>N° permis</th><th>Commune</th><th>Autorisé le</th><th>État</th><th class="hide-m">Projet</th></tr>${P.slice(-3).reverse().map(p => `<tr><td><code>${esc(p.NUM_DAU)}</code></td><td>${esc(p.COMM)}</td><td>${esc(p.DATE_REELLE_AUTORISATION)}</td><td>${esc(p.etat)}</td><td class="hide-m">${esc(p.signal_projet) || "—"}</td></tr>`).join("")}</table>`
-        : `<p class="why">Présent dans les permis du 78, mais pas parmi les cibles : le détail de ses permis n'est pas embarqué dans la page.</p>`},
-      {t:"Les règles", b:`<p>Règle appliquée : <code>${esc(regle)}</code> → <b>${esc(nomFam(fam0))}</b>${dernier ? ` <span class="why">(forme juridique ${esc(dernier.CJ_DEM)}, activité ${esc(dernier.APE_DEM)})</span>` : ""}. <a href="#regles">Voir les règles</a></p>`},
-      {t:"L'annuaire officiel", off: !vu, b: vu
-        ? `<p>Fiche consultée : activité à jour, entreprise active ou non, structure médico-sociale ou non. <a href="https://annuaire-entreprises.data.gouv.fr/entreprise/${s}" target="_blank" rel="noopener">Voir la fiche</a></p>`
-        : `<p class="why">Pas consulté pour ce demandeur (test limité à 640 demandeurs).</p>`},
-      {t:"L'agent IA", ia:true, off: !a, b: a
-        ? `<p>Fiches consultées : ${esc(a.outils_appeles)}.</p><p>Conclusion : <b>${esc(nomFam(a.famille_agent))}</b> <span class="pill ${conf(a.confiance_agent)}">confiance ${esc(a.confiance_agent)}</span> ${a.change === "oui" ? '<span class="pill ia">corrige les règles</span>' : '<span class="pill">confirme les règles</span>'}</p><p class="why">« ${esc(a.justification)} »</p>`
-        : `<p class="why">Pas appelé : les règles suffisaient.</p>`},
+      {t:"Les permis", b: P.length
+        ? `<p>${c.nb_permis} permis dans le 78, de ${esc(c.premiere)} à ${esc(c.derniere)}. Les trois derniers :</p><table class="permis"><tr><th>n° de permis</th><th>commune</th><th>autorisé le</th><th>état</th><th class="hide-m">projet</th></tr>${P.slice(-3).reverse().map(p => `<tr><td class="mono">${esc(p.NUM_DAU)}</td><td>${esc(p.COMM)}</td><td class="mono">${esc(p.DATE_REELLE_AUTORISATION)}</td><td>${esc(p.etat)}</td><td class="hide-m">${p.signal_projet ? `<mark>${esc(p.signal_projet)}</mark>` : "—"}</td></tr>`).join("")}</table>`
+        : `<p class="note">Présent dans les permis du 78, mais pas parmi les cibles : ses permis ne sont pas embarqués dans la page.</p>`},
+      {t:"Les règles", b:`<p><code>${esc(regle)}</code> → <b>${esc(nomFam(fam0))}</b>${dernier ? ` <span class="note">(forme juridique ${esc(dernier.CJ_DEM)}, activité ${esc(dernier.APE_DEM)})</span>` : ""}</p>`},
+      {t:"L'annuaire", off: !vu, b: vu
+        ? `<p>Fiche officielle consultée : activité à jour, entreprise active ou non, médico-social ou non. <a href="https://annuaire-entreprises.data.gouv.fr/entreprise/${s}" target="_blank" rel="noopener">voir la fiche</a></p>`
+        : `<p class="note">Pas consulté pour ce demandeur (test limité à 640 demandeurs).</p>`},
+      {t:"L'agent IA", ai:true, off: !a, b: a
+        ? `<p>Fiches consultées : <span class="mono">${esc(a.outils_appeles)}</span></p><p>Réponse : <b>${esc(nomFam(a.famille_agent))}</b>, confiance <span class="c-${esc(a.confiance_agent)}">${esc(a.confiance_agent)}</span>${a.change === "oui" ? `. <span class="up">Corrige les règles.</span>` : `. Confirme les règles.`}</p><div class="quote">${esc(a.justification)}</div>`
+        : `<p class="note">Pas appelé : les règles suffisaient.</p>`},
       {t:"Le score", b: c
-        ? `<p><span class="score">${c.score}</span> points → dans la liste des cibles.</p><ul class="pts">${c.raisons.split(" ; ").map(r => `<li>${esc(r)}</li>`).join("")}</ul>`
-        : `<p>Score inférieur à 3 : pas retenu comme cible.</p>`},
-      {t:"La décision", b:`<p>Un membre de l'équipe Buddimm relit et décide. <b>L'outil ne contacte personne.</b></p>`},
+        ? `<p><span class="sc">${c.score} points</span>, retenu comme cible :</p><ul class="pts">${c.raisons.split(" ; ").map(r => `<li>${esc(r)}</li>`).join("")}</ul>`
+        : `<p>Moins de 3 points : pas retenu.</p>`},
+      {t:"La décision", b:`<p>Quelqu'un chez Buddimm relit et décide. L'outil ne contacte personne.</p>`},
     ];
-    $("#sim").innerHTML = steps.map((st, i) => `<div class="step ${st.ia ? "ia" : ""} ${st.off ? "off" : ""}" id="st${i}"><div class="n">${i + 1}</div><div><h3>${st.t}</h3>${st.b}</div></div>`).join("");
+    $("#sim").innerHTML = steps.map((st, i) => `<div class="step ${st.ai ? "ai" : ""} ${st.off ? "off" : ""}" id="st${i}"><h3><span>${String(i + 1).padStart(2, "0")}</span>${st.t}</h3>${st.b}</div>`).join("");
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    steps.forEach((_, i) => timers.push(setTimeout(() => document.getElementById("st" + i).classList.add("on"), reduce ? 0 : 350 * i)));
+    steps.forEach((_, i) => timers.push(setTimeout(() => document.getElementById("st" + i).classList.add("on"), reduce ? 0 : 300 * i)));
   }
   $("#simGo").addEventListener("click", play);
   $("#simSel").addEventListener("change", play);
