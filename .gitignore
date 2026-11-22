@@ -5,6 +5,7 @@ raw/
 NOTE.md
 NOTE.pdf
 build_note_pdf.py
+note/
 
 # Sorties dépassées (remplacées par cibles_78.csv et cache_annuaire.jsonl)
 annuaire_78.csv
