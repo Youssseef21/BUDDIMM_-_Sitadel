@@ -1,0 +1,143 @@
+=== PÉRIMÈTRE ===
+PC logements 78 : 19237 | PC locaux 78 : 5433 | dans les deux : 670
+Permis uniques : 24000 | dont demandeur personne morale (SIREN diffusé) : 7092 (30%)
+Demandeurs distincts (SIREN) : 3957
+
+=== FAMILLES (en nombre de permis) ===
+SCI / foncière                              2539   35.8%   (1822 demandeurs)
+promoteur / constructeur                    1220   17.2%   (754 demandeurs)
+collectivité / établissement public         1207   17.0%   (319 demandeurs)
+entreprise                                  1178   16.6%   (696 demandeurs)
+bailleur social                              390    5.5%   (47 demandeurs)
+ESS : association / fondation                310    4.4%   (146 demandeurs)
+exploitation agricole                        136    1.9%   (101 demandeurs)
+non déterminé                                 61    0.9%   (56 demandeurs)
+opérateur santé / médico-social privé         51    0.7%   (33 demandeurs)
+
+NON DÉTERMINÉ : 61 permis (0.9%)
+
+=== RÈGLES UTILISÉES ===
+regle
+R11_CJ_SOCIETE_CIVILE+APE_IMMOBILIER       1675
+R09_APE_PROMOTION_CONSTRUCTION             1220
+R14_CJ_SOCIETE_COMMERCIALE                 1178
+R06_CJ_PERSONNE_PUBLIQUE                   1172
+R13_APE_IMMOBILIER_OU_HOLDING               859
+R03_CJ_ASSOCIATION_FONDATION                300
+R10_CJ_OU_APE_AGRICOLE                      136
+R01_CJ_SA_HLM                               131
+R08_NOM_BAILLEUR+APE_IMMOBILIER             120
+R08B_PART_LOGEMENT_SOCIAL>=50%              102
+R99_AUCUNE_REGLE                             61
+R07_APE_SANTE_MEDICO_SOCIAL                  51
+R02_CJ_EPIC_LOCAL+APE_LOCATION_LOGEMENT      37
+R05_CJ_HOPITAL_PUBLIC                        35
+R04_CJ_ORGANISME_SOCIAL                      10
+R12_CJ_SYNDICAT_PROPRIETAIRES                 5
+
+=== CONFIANCE ===
+confiance
+moyenne    5226
+forte      1685
+faible      120
+-            61
+
+=== SOUS-TYPES DÉTAILLÉS ===
+famille                                sous_type                              
+SCI / foncière                         société civile immobilière                 1675
+collectivité / établissement public    commune                                     837
+promoteur / constructeur               société de programme                        639
+                                       promoteur / constructeur                    581
+SCI / foncière                         marchand de biens                           423
+entreprise                             services                                    392
+SCI / foncière                         foncière / gestion                          316
+collectivité / établissement public    autre public                                251
+entreprise                             commerce                                    193
+                                       industrie                                   153
+ESS : association / fondation          association                                 142
+exploitation agricole                                                              136
+bailleur social                        SA d'HLM                                    131
+                                       repéré par le nom                           120
+entreprise                             énergie / eau / déchets                     103
+bailleur social                        repéré par la part de logements sociaux     102
+entreprise                             BTP                                          96
+                                       transport / logistique                       89
+                                       information / finance                        88
+SCI / foncière                         holding                                      74
+ESS : association / fondation          association médico-sociale                   68
+entreprise                             hôtellerie / restauration                    64
+collectivité / établissement public    département                                  58
+SCI / foncière                         loueur de logements (privé)                  46
+ESS : association / fondation          association cultuelle                        37
+bailleur social                        office public de l'habitat                   37
+collectivité / établissement public    hôpital public                               35
+ESS : association / fondation          fondation de santé                           35
+non déterminé                          CJ=6540 APE=70.10Z                           29
+opérateur santé / médico-social privé  88.91A                                       28
+collectivité / établissement public    région                                       26
+ESS : association / fondation          mutuelle / organisme social                  10
+opérateur santé / médico-social privé  86.10Z                                        8
+non déterminé                          CJ=6541 APE=70.10Z                            8
+ESS : association / fondation          fondation                                     7
+                                       fondation médico-sociale                      7
+opérateur santé / médico-social privé  87.10A                                        6
+non déterminé                          CJ=6599 APE=70.10Z                            6
+SCI / foncière                         copropriété                                   5
+ESS : association / fondation          association de santé                          4
+
+=== PERMIS AVEC UN SIGNAL MÉDICO-SOCIAL DANS LE PROJET ===
+471 permis
+famille                                            ESS : association / fondation  SCI / foncière  bailleur social  collectivité / établissement public  entreprise  non déterminé  opérateur santé / médico-social privé  promoteur / constructeur
+signal_projet                                                                                                                                                                                                                                     
+résidence handicapés                                                           3               0                1                                    0           0              0                                      0                         0
+résidence pers. âgées                                                          0               7                3                                    0           2              0                                      0                        20
+résidence pers. âgées ; équipement action sociale                              0               0                0                                    0           0              0                                      0                         2
+résidence pers. âgées ; équipement santé                                       0               1                0                                    0           0              0                                      0                         0
+résidence sociale                                                              1               3               13                                    0           8              0                                      0                         3
+résidence sociale ; équipement action sociale                                  0               0                0                                    0           1              0                                      0                         0
+équipement action sociale                                                     27              29                8                                   91          26              0                                     25                        22
+équipement santé                                                              32              30                7                                   66          10              3                                     17                        10
+
+=== NON DÉTERMINÉS : combinaisons CJ / APE les plus fréquentes (à revoir) ===
+CJ_DEM  APE_DEM
+6540    70.10Z     29
+6541    70.10Z      8
+6599    70.10Z      6
+6596    64.19Z      3
+6540    00.00Z      2
+6599    66.30Z      2
+        64.30Z      2
+2700    94.91Z      1
+6540    47.19B      1
+        91.03Z      1
+6576    75.00Z      1
+6585    66.19A      1
+6599    70.22Z      1
+
+=== CONTRÔLE : top 25 demandeurs et leur famille ===
+                                                   denomination                             famille                               sous_type  nb_permis                           regle
+                                       DEPARTEMENT DES YVELINES collectivité / établissement public                             département         56        R06_CJ_PERSONNE_PUBLIQUE
+                                            BOUYGUES IMMOBILIER            promoteur / constructeur                promoteur / constructeur         53  R09_APE_PROMOTION_CONSTRUCTION
+                                          IMMOBILIERE DES ORMES                      SCI / foncière                       marchand de biens         50   R13_APE_IMMOBILIER_OU_HOLDING
+                                                 IMMOBILIERE 3F                     bailleur social repéré par la part de logements sociaux         48  R08B_PART_LOGEMENT_SOCIAL>=50%
+    LES RESIDENCES SOCIETE ANONYME D'HABITATIONS A LOYER MODERE                     bailleur social                       repéré par le nom         36 R08_NOM_BAILLEUR+APE_IMMOBILIER
+                                               FONDATION MALLET       ESS : association / fondation                      fondation de santé         33    R03_CJ_ASSOCIATION_FONDATION
+                                   SA D'H L M FRANCE HABITATION                     bailleur social                                SA d'HLM         32                   R01_CJ_SA_HLM
+                       ANTIN RESIDENCES SA HABITAT LOYER MODERE                     bailleur social                                SA d'HLM         30                   R01_CJ_SA_HLM
+                                                 SNCF MOBILITES collectivité / établissement public                            autre public         30        R06_CJ_PERSONNE_PUBLIQUE
+                       ENTREPRISE SOCIALE POUR L'HABITAT DOMNIS                     bailleur social                       repéré par le nom         29 R08_NOM_BAILLEUR+APE_IMMOBILIER
+                                      GRAND PARIS SEINE ET OISE collectivité / établissement public                            autre public         29        R06_CJ_PERSONNE_PUBLIQUE
+                                     COMMUNE DE MANTES LA VILLE collectivité / établissement public                                 commune         26        R06_CJ_PERSONNE_PUBLIQUE
+                                           REGION ILE DE FRANCE collectivité / établissement public                                  région         26        R06_CJ_PERSONNE_PUBLIQUE
+                                              COMMUNE D'ORGEVAL collectivité / établissement public                                 commune         26        R06_CJ_PERSONNE_PUBLIQUE
+                                    COMMUNE DE MAISONS LAFFITTE collectivité / établissement public                                 commune         22        R06_CJ_PERSONNE_PUBLIQUE
+                                     IMMOBILIER ET INFORMATIQUE                          entreprise                                services         21      R14_CJ_SOCIETE_COMMERCIALE
+                                              COMMUNE DE POISSY collectivité / établissement public                                 commune         21        R06_CJ_PERSONNE_PUBLIQUE
+CDC HABITAT SOCIAL SOCIETE ANONYME D'HABITATIONS A LOYER MODERE                     bailleur social                       repéré par le nom         20 R08_NOM_BAILLEUR+APE_IMMOBILIER
+                           ASSOCIATION DIOCESAINE DE VERSAILLES       ESS : association / fondation                   association cultuelle         19    R03_CJ_ASSOCIATION_FONDATION
+                               NEXITY IR PROGRAMMES GRAND PARIS            promoteur / constructeur                promoteur / constructeur         19  R09_APE_PROMOTION_CONSTRUCTION
+                                          KAUFMAN & BROAD HOMES            promoteur / constructeur                promoteur / constructeur         19  R09_APE_PROMOTION_CONSTRUCTION
+                                            MARIGNAN RESIDENCES            promoteur / constructeur                promoteur / constructeur         18  R09_APE_PROMOTION_CONSTRUCTION
+                                                         ENEDIS                          entreprise                 énergie / eau / déchets         18      R14_CJ_SOCIETE_COMMERCIALE
+                                                         ETIMMO            promoteur / constructeur                promoteur / constructeur         17  R09_APE_PROMOTION_CONSTRUCTION
+                                        SNCF GARES & CONNEXIONS                          entreprise                  transport / logistique         17      R14_CJ_SOCIETE_COMMERCIALE

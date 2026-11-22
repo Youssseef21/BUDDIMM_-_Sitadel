@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Permis 78, cibles Buddimm</title>
+<meta name="description" content="Prototype : qui construit dans les Yvelines, et lesquels de ces demandeurs intéressent Buddimm.">
+<style>
+:root{
+  --bg:#f7f6f2;--surface:#fff;--soft:#f0eee8;--text:#1f1e1c;--muted:#5f5e5a;--line:#e2e0d8;
+  --accent:#534ab7;--accent-bg:#eeedfe;--teal:#0f6e56;--teal-bg:#e1f5ee;--amber:#854f0b;--amber-bg:#faeeda;--red:#a32d2d;--red-bg:#fcebeb;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1a1a19;--surface:#242422;--soft:#2c2c2a;--text:#ecebe6;--muted:#b4b2a9;--line:#3a3a37;
+  --accent:#afa9ec;--accent-bg:#2b2754;--teal:#5dcaa5;--teal-bg:#0c3b30;--amber:#fac775;--amber-bg:#3d2a0c;--red:#f09595;--red-bg:#4a1b1b;}}
+:root[data-theme="dark"]{
+  --bg:#1a1a19;--surface:#242422;--soft:#2c2c2a;--text:#ecebe6;--muted:#b4b2a9;--line:#3a3a37;
+  --accent:#afa9ec;--accent-bg:#2b2754;--teal:#5dcaa5;--teal-bg:#0c3b30;--amber:#fac775;--amber-bg:#3d2a0c;--red:#f09595;--red-bg:#4a1b1b;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:900px;margin:0 auto;padding:36px 16px 56px}
+h1{font-size:29px;line-height:1.2;font-weight:650;margin:0 0 10px;letter-spacing:-.01em}
+h2{font-size:21px;font-weight:650;margin:52px 0 6px}
+h3{font-size:16px;font-weight:650;margin:0 0 2px}
+.num{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--accent-bg);color:var(--accent);font-size:14px;margin-right:8px;vertical-align:2px}
+p.lead{font-size:18px;color:var(--muted);margin:0;max-width:680px}
+.sub{color:var(--muted);margin:0 0 16px;max-width:680px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.kpi b{display:block;font-size:28px;font-weight:650;font-variant-numeric:tabular-nums;line-height:1.2}
+.kpi span{color:var(--muted);font-size:14px}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);align-items:stretch}
+.flow .st{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 14px;position:relative}
+.flow .st + .st{margin-left:22px}
+.flow .st + .st::before{content:"→";position:absolute;left:-19px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.flow .st b{display:block;font-size:15px}
+.flow .st span{display:block;font-size:14px;color:var(--muted);margin-top:2px}
+.flow .st.ia{background:var(--accent-bg);border-color:var(--accent)}
+.flow .st.ia b{color:var(--accent)}
+.groups{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.groups p{margin:4px 0 0;font-size:15px;color:var(--muted)}
+.groups .ex{font-size:14px;margin-top:6px;color:var(--text)}
+details{margin-top:12px}
+summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:15px}
+.rule{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.rule .ex{color:var(--muted)}
+.rule .cnt{color:var(--muted);font-size:12px;display:block}
+.callout{border-left:3px solid var(--accent);background:var(--accent-bg);padding:10px 14px;margin:14px 0 0}
+.callout p{margin:0;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{font-size:14px;padding:3px 10px;border-radius:999px;background:var(--soft);color:var(--text)}
+.chip b{color:var(--accent)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px}
+select,input,button{font:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+select{max-width:100%}
+button{cursor:pointer;background:var(--accent);border-color:var(--accent);color:var(--surface);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sim{display:grid;gap:8px}
+.step{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;opacity:.25;transition:opacity .35s}
+.step.on{opacity:1}
+.step.off.on{opacity:.6;border-style:dashed}
+.step .n{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:650;background:var(--teal-bg);color:var(--teal)}
+.step.ia .n{background:var(--accent-bg);color:var(--accent)}
+.step h3{font-size:15px;margin:2px 0}
+.step p{margin:2px 0;font-size:15px}
+.why{color:var(--muted);font-size:14px}
+.pill{display:inline-block;font-size:13px;padding:1px 10px;border-radius:999px;background:var(--soft);color:var(--muted);white-space:nowrap}
+.pill.ia{background:var(--accent-bg);color:var(--accent)}
+.pill.ok{background:var(--teal-bg);color:var(--teal)}
+.pill.warn{background:var(--amber-bg);color:var(--amber)}
+.pill.no{background:var(--red-bg);color:var(--red)}
+.score{display:inline-grid;place-items:center;min-width:30px;height:26px;padding:0 6px;border-radius:7px;font-weight:650;background:var(--accent-bg);color:var(--accent)}
+.tablewrap{max-height:440px;overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;font-size:13px;font-weight:600;color:var(--muted);padding:10px 12px;background:var(--soft);border-bottom:1px solid var(--line);position:sticky;top:0}
+td{padding:9px 12px;border-bottom:1px solid var(--line)}
+tbody tr{cursor:pointer}
+tbody tr:hover{background:var(--soft)}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
+.small{font-size:13px;color:var(--muted)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.three p{margin:6px 0 0;font-size:15px;color:var(--muted)}
+.limits{margin-top:12px;font-size:15px;color:var(--muted)}
+.limits p{margin:4px 0}
+a{color:var(--accent)}
+footer{margin-top:48px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+footer p{margin:4px 0}
+@media (max-width:760px){
+  h1{font-size:24px}.kpi b{font-size:22px}
+  .groups,.three{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr}.flow .st + .st{margin:22px 0 0}.flow .st + .st::before{content:"↓";left:50%;top:-20px;transform:translateX(-50%)}
+  .rule{grid-template-columns:1fr;gap:0}.hide-m{display:none}
+}
+@media (prefers-reduced-motion:reduce){.step{transition:none}}
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Qui construit dans les Yvelines, et qui intéresse Buddimm ?</h1>
+  <p class="lead">Les permis de construire publics disent <b>qui</b> construit, pas <b>ce qu'est</b> ce demandeur. J'ai construit ce prototype pour le deviner, et pour proposer à Buddimm une courte liste de structures à regarder de plus près.</p>
+  <div class="kpis" id="kpis"></div>
+</header>
+
+<section>
+  <h2><span class="num">1</span>Comment ça marche</h2>
+  <div class="flow">
+    <div class="st"><b>Règles</b><span>classent chaque demandeur</span></div>
+    <div class="st"><b>Annuaire</b><span>vérifie la fiche officielle</span></div>
+    <div class="st ia"><b>Agent IA</b><span>tranche les cas difficiles</span></div>
+    <div class="st"><b>Score</b><span>une liste courte, un humain décide</span></div>
+  </div>
+  <div class="callout"><p><b>Pourquoi des règles avant l'IA ?</b> Une commune ou une SA d'HLM, c'est un fait légal : une règle ne se trompe pas, ne coûte rien et s'explique en une phrase. L'IA ne sert que là où les règles hésitent, environ 0,4 % des demandeurs.</p></div>
+</section>
+
+<section id="regles">
+  <h2><span class="num">2</span>Les règles</h2>
+  <p class="sub">Testées dans l'ordre, de la plus sûre à la moins sûre. La première qui s'applique gagne.</p>
+  <div class="groups">
+    <div class="card"><h3>1. Les certitudes <span class="pill ok">sûr</span></h3><p>La forme juridique suffit.</p><p class="ex">SA d'HLM → bailleur social · association → association · commune → collectivité</p></div>
+    <div class="card"><h3>2. Le médico-social <span class="pill warn">probable</span></h3><p>Une activité de santé ou d'action sociale.</p><p class="ex">clinique, EHPAD privé → opérateur médico-social</p></div>
+    <div class="card"><h3>3. Les bailleurs cachés <span class="pill warn">probable</span></h3><p>Repérés par leur nom ou par ce qu'ils construisent.</p><p class="ex">Immobilière 3F : 88 % de logements sociaux → bailleur social</p></div>
+    <div class="card"><h3>4. Le reste <span class="pill warn">à vérifier</span></h3><p>D'après l'activité, parfois périmée : c'est là que l'IA intervient.</p><p class="ex">promotion → promoteur · SCI → foncière · sinon → non déterminé</p></div>
+  </div>
+  <details><summary>Voir les 15 règles en détail</summary><div id="rules" style="margin-top:8px"></div></details>
+</section>
+
+<section>
+  <h2><span class="num">3</span>Le score</h2>
+  <p class="sub">Des points simples, retenu comme cible à partir de 3. Ces poids sont mes choix, à ajuster avec Buddimm.</p>
+  <div class="chips">
+    <span class="chip"><b>+3</b> structure médico-sociale</span><span class="chip"><b>+2</b> bailleur social</span>
+    <span class="chip"><b>+2</b> projet médico-social</span><span class="chip"><b>+1</b> construit souvent</span>
+    <span class="chip"><b>+1</b> actif depuis 2024</span><span class="chip"><b>+1</b> confirmé par l'annuaire</span>
+    <span class="chip">exclu si fermé</span>
+  </div>
+</section>
+
+<section id="essayer">
+  <h2><span class="num">4</span>Essayer</h2>
+  <p class="sub">Choisis un demandeur : la page rejoue ce que l'outil a fait pour lui.</p>
+  <div class="row">
+    <select id="simSel" aria-label="Demandeur"></select>
+    <button id="simGo" type="button">Rejouer</button>
+  </div>
+  <div class="sim" id="sim" aria-live="polite"></div>
+</section>
+
+<section>
+  <h2><span class="num">5</span>Les cibles</h2>
+  <div class="row">
+    <input type="search" id="q" placeholder="Rechercher un nom" aria-label="Rechercher un nom" style="flex:1;min-width:180px">
+    <select id="fFam" aria-label="Type de demandeur"><option value="">Tous les types</option></select>
+    <span class="small" id="count"></span>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th class="r">Score</th><th>Demandeur</th><th class="hide-m">Type</th><th class="r">Permis</th><th>Fiche</th></tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">6</span>Ce que j'en retiens</h2>
+  <div class="three">
+    <div class="card"><h3>L'exploitant est inconnu</h3><p>Des promoteurs construisent des résidences seniors sans que l'on sache qui les gérera : une piste pour Buddimm.</p></div>
+    <div class="card"><h3>Les bailleurs ralentissent</h3><p>Une trentaine de permis par an jusqu'en 2022, moins de 20 depuis 2024.</p></div>
+    <div class="card"><h3>L'IA se trompe aussi</h3><p>J'ai corrigé une erreur de l'agent en relisant ses justifications. Une personne garde le dernier mot.</p></div>
+  </div>
+  <div class="limits card">
+    <p><span class="pill ok">sûr</span> les familles déduites de la forme juridique.</p>
+    <p><span class="pill warn">à vérifier</span> les classements par l'activité ou par l'IA, et les poids du score.</p>
+    <p><span class="pill no">inconnu</span> environ 15 % des chantiers jamais déclarés, l'historique des modifications d'un permis.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Sources : <a href="https://www.data.gouv.fr/datasets/liste-des-permis-de-construire-et-autres-autorisations-durbanisme">Sitadel (octobre 2026)</a> et <a href="https://annuaire-entreprises.data.gouv.fr">Annuaire des entreprises</a>. Personnes morales uniquement, aucun nom de personne physique, aucun contact automatique.</p>
+  <p>Youssef Harrane · Python, GPT-5.4 pour l'agent, Claude Code comme assistant de code.</p>
+</footer>
+</main>
+
+<script src="data.js"></script>
+<script>
+(function(){
+  const D = window.DATA, $ = s => document.querySelector(s);
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const fmt = n => Number(n).toLocaleString("fr-FR");
+  const NOMS = {"ESS : association / fondation":"Association / fondation","opérateur santé / médico-social privé":"Opérateur médico-social",
+    "bailleur social":"Bailleur social","promoteur / constructeur":"Promoteur","SCI / foncière":"SCI / foncière","entreprise":"Entreprise",
+    "collectivité / établissement public":"Collectivité","exploitation agricole":"Agricole","non déterminé":"Non déterminé"};
+  const nomFam = f => NOMS[f] || f;
+
+  const k = D.chiffres;
+  $("#kpis").innerHTML = [[fmt(k.permis),"permis analysés"],[fmt(k.demandeurs),"demandeurs"],[fmt(k.cibles),"cibles pour Buddimm"]]
+    .map(([v,l]) => `<div class="card kpi"><b>${v}</b><span>${l}</span></div>`).join("");
+
+  const REGLES = [
+    ["R01_CJ_SA_HLM","est une SA d'HLM","bailleur social","SA d'HLM France Habitation"],
+    ["R02_CJ_EPIC_LOCAL+APE_LOCATION_LOGEMENT","est un office public qui loue des logements","bailleur social","Mantes Yvelines Habitat"],
+    ["R03_CJ_ASSOCIATION_FONDATION","est une association ou une fondation","association / fondation","Fondation Mallet"],
+    ["R04_CJ_ORGANISME_SOCIAL","est une mutuelle ou un organisme social","association / fondation","une mutuelle"],
+    ["R05_CJ_HOPITAL_PUBLIC","est un hôpital public","collectivité","un centre hospitalier"],
+    ["R06_CJ_PERSONNE_PUBLIQUE","est une commune, un département, une région…","collectivité","Commune de Poissy"],
+    ["R07_APE_SANTE_MEDICO_SOCIAL","a une activité de santé ou médico-sociale","opérateur médico-social","Orpea, une clinique"],
+    ["R08_NOM_BAILLEUR+APE_IMMOBILIER","a « HLM » ou « loyer modéré » dans son nom","bailleur social","Les Résidences SA d'HLM"],
+    ["R08B_PART_LOGEMENT_SOCIAL>=50%","construit plus de 50 % de logements sociaux","bailleur social","Immobilière 3F"],
+    ["R09_APE_PROMOTION_CONSTRUCTION","fait de la promotion ou de la construction","promoteur","Bouygues Immobilier"],
+    ["R10_CJ_OU_APE_AGRICOLE","est une exploitation agricole","agricole","un GAEC"],
+    ["R11_CJ_SOCIETE_CIVILE+APE_IMMOBILIER","est une société civile immobilière","SCI / foncière","une SCI familiale"],
+    ["R13_APE_IMMOBILIER_OU_HOLDING","est un marchand de biens ou une holding","SCI / foncière","un marchand de biens"],
+    ["R14_CJ_SOCIETE_COMMERCIALE","est une autre société commerciale","entreprise","Lidl, Enedis"],
+    ["R99_AUCUNE_REGLE","ne correspond à aucune règle","non déterminé","certaines holdings"]];
+  const R = D.regles || {};
+  $("#rules").innerHTML = REGLES.map(([id, si, alors, ex], i) => `<div class="rule"><span>${i + 1}. Si le demandeur ${esc(si)}</span><span>→ <b>${esc(alors)}</b><span class="cnt">${R[id] ? fmt(R[id]) + " permis" : ""}</span></span><span class="ex">${esc(ex)}</span></div>`).join("");
+
+  [...new Set(D.cibles.map(c => c.famille))].sort().forEach(f => $("#fFam").insertAdjacentHTML("beforeend", `<option value="${esc(f)}">${esc(nomFam(f))}</option>`));
+  function table(){
+    const q = $("#q").value.trim().toLowerCase(), f = $("#fFam").value;
+    const rows = D.cibles.filter(c => (!q || c.nom.toLowerCase().includes(q)) && (!f || c.famille === f));
+    $("#count").textContent = rows.length + " cible(s)";
+    $("#tbody").innerHTML = rows.map(c => `<tr data-s="${c.siren}" tabindex="0"><td class="r"><span class="score">${c.score}</span></td><td><b>${esc(c.nom)}</b></td><td class="hide-m">${esc(nomFam(c.famille))}</td><td class="r">${c.nb_permis}</td><td><a href="${esc(c.source)}" target="_blank" rel="noopener">voir</a></td></tr>`).join("");
+  }
+  $("#q").addEventListener("input", table); $("#fFam").addEventListener("change", table);
+  const pick = e => { if (e.target.closest("a")) return; const tr = e.target.closest("tr"); if (tr) show(tr.dataset.s); };
+  $("#tbody").addEventListener("click", pick);
+  $("#tbody").addEventListener("keydown", e => { if (e.key === "Enter") pick(e); });
+  table();
+
+  const byS = Object.fromEntries(D.cibles.map(c => [c.siren, c])), agentByS = Object.fromEntries(D.agent.map(a => [a.siren, a]));
+  const opt = (s, label) => `<option value="${s}">${esc(label)}</option>`;
+  $("#simSel").innerHTML =
+    `<optgroup label="Meilleures cibles">${D.cibles.slice(0, 10).map(c => opt(c.siren, c.nom)).join("")}</optgroup>` +
+    `<optgroup label="Cas difficiles traités par l'agent IA">${D.agent.map(a => opt(a.siren, a.denomination)).join("")}</optgroup>`;
+
+  const conf = c => ({forte:"ok", moyenne:"warn", faible:"no"}[c] || "");
+  let timers = [];
+  function show(s){
+    $("#simSel").value = s;
+    document.getElementById("essayer").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+    play();
+  }
+  function play(){
+    timers.forEach(clearTimeout); timers = [];
+    const s = $("#simSel").value, c = byS[s], a = agentByS[s];
+    const P = c ? c.permis : [], dernier = P[P.length - 1];
+    const fam0 = a ? a.famille_regles : c.famille;
+    const vu = a || (c && c.annuaire === "oui");
+    const steps = [
+      {t:"Les permis", b: c ? `<p>${c.nb_permis} permis dans le 78, de ${esc(c.premiere)} à ${esc(c.derniere)}.</p>` : `<p>Présent dans les permis du 78, mais pas parmi les cibles.</p>`},
+      {t:"Les règles", b:`<p>Première conclusion : <b>${esc(nomFam(fam0))}</b>.</p>`},
+      {t:"L'annuaire", off: !vu, b: vu ? `<p>Fiche officielle consultée. <a href="https://annuaire-entreprises.data.gouv.fr/entreprise/${s}" target="_blank" rel="noopener">Voir la fiche</a></p>` : `<p class="why">Pas consulté (test limité à 640 demandeurs).</p>`},
+      {t:"L'agent IA", ia:true, off: !a, b: a
+        ? `<p><b>${esc(nomFam(a.famille_agent))}</b> <span class="pill ${conf(a.confiance_agent)}">confiance ${esc(a.confiance_agent)}</span> ${a.change === "oui" ? '<span class="pill ia">corrige les règles</span>' : ''}</p><p class="why">« ${esc(a.justification)} »</p>`
+        : `<p class="why">Pas appelé : les règles suffisaient.</p>`},
+      {t:"Le résultat", b: c ? `<p>Score <span class="score">${c.score}</span> → dans la liste des cibles.</p><p class="why">${esc(c.raisons)}.</p>` : `<p>Pas retenu comme cible.</p>`},
+    ];
+    $("#sim").innerHTML = steps.map((st, i) => `<div class="step ${st.ia ? "ia" : ""} ${st.off ? "off" : ""}" id="st${i}"><div class="n">${i + 1}</div><div><h3>${st.t}</h3>${st.b}</div></div>`).join("");
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    steps.forEach((_, i) => timers.push(setTimeout(() => document.getElementById("st" + i).classList.add("on"), reduce ? 0 : 350 * i)));
+  }
+  $("#simGo").addEventListener("click", play);
+  $("#simSel").addEventListener("change", play);
+  play();
+})();
+</script>
+</body>
+</html>

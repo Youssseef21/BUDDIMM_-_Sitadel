@@ -1,0 +1,244 @@
+=== Lecture du fichier LOGEMENTS (environ 1 Go, patience) ===
+  (encodage utilisé : utf-8)
+=== Lecture du fichier LOCAUX ===
+  (encodage utilisé : utf-8)
+
+========== VUE D'ENSEMBLE ==========
+PC logements 78 : 19237
+PC locaux 78    : 5433
+Présents dans les deux fichiers (même NUM_DAU) : 670
+
+========== LOGEMENTS : 3363 personnes morales sur 19237 (17%) ==========
+
+-- Taux de remplissage (%) sur les personnes morales --
+DENOM_DEM                   100.0
+SIRET_DEM                    93.0
+APE_DEM                      99.9
+CJ_DEM                       99.9
+DATE_REELLE_AUTORISATION    100.0
+DATE_REELLE_DOC              60.9
+DATE_REELLE_DAACT            35.0
+
+-- Top 15 catégories juridiques (CJ_DEM) --
+CJ_DEM
+6540    864
+5710    633
+6541    484
+5499    379
+5599    196
+5202    178
+6599    147
+7210    105
+5546     98
+5699     82
+4140     29
+5515     28
+9220     23
+5646     23
+7220     13
+
+-- Top 15 codes APE (APE_DEM) --
+APE_DEM
+68.20B    910
+41.10D    584
+68.20A    430
+41.10A    424
+68.10Z    382
+84.11Z    121
+68.31Z     49
+70.10Z     46
+64.20Z     36
+41.20A     36
+41.10C     35
+68.32A     32
+42.99Z     25
+73.20Z     21
+71.12B     18
+
+-- État du permis (ETAT_DAU) --
+ETAT_DAU
+6    1177
+2    1051
+5     866
+4     269
+
+-- Années de dépôt (AN_DEPOT) --
+AN_DEPOT
+2011      3
+2012    100
+2013    222
+2014    235
+2015    258
+2016    266
+2017    290
+2018    247
+2019    256
+2020    231
+2021    356
+2022    247
+2023    221
+2024    185
+2025    168
+2026     77
+2091      1
+
+-- Top 15 demandeurs (DENOM_DEM) par nombre de permis --
+DENOM_DEM
+BOUYGUES IMMOBILIER                                            48
+IMMOBILIERE 3F                                                 44
+IMMOBILIERE DES ORMES                                          39
+ANTIN RESIDENCES SA HABITAT LOYER MODERE                       30
+LES RESIDENCES SOCIETE ANONYME D'HABITATIONS A LOYER MODERE    30
+ENTREPRISE SOCIALE POUR L'HABITAT DOMNIS                       29
+SA D'H L M FRANCE HABITATION                                   23
+IMMOBILIER ET INFORMATIQUE                                     20
+KAUFMAN & BROAD HOMES                                          19
+NEXITY IR PROGRAMMES GRAND PARIS                               19
+MARIGNAN RESIDENCES                                            18
+ETIMMO                                                         17
+CABINET VILLAIN SA                                             16
+NEXITY IR PROGRAMMES DOMAINES                                  15
+SCI RESIDENCES FRANCO SUISSE                                   15
+
+========== LOCAUX : 4245 personnes morales sur 5433 (78%) ==========
+
+-- Taux de remplissage (%) sur les personnes morales --
+DENOM_DEM                   100.0
+SIRET_DEM                    96.2
+APE_DEM                     100.0
+CJ_DEM                      100.0
+DATE_REELLE_AUTORISATION    100.0
+DATE_REELLE_DOC              56.2
+DATE_REELLE_DAACT            29.2
+
+-- Top 15 catégories juridiques (CJ_DEM) --
+CJ_DEM
+5710    848
+6540    806
+7210    759
+5599    257
+5499    255
+9220    211
+6541    148
+6599    127
+5202    121
+6598     64
+5699     56
+7220     54
+9300     40
+4120     36
+6597     32
+
+-- Top 15 codes APE (APE_DEM) --
+APE_DEM
+68.20B    980
+84.11Z    916
+41.10D    183
+68.20A    131
+41.10A    116
+70.10Z    112
+68.10Z     75
+86.10Z     65
+01.11Z     63
+64.20Z     50
+71.12B     43
+94.99Z     41
+52.21Z     39
+94.91Z     34
+85.31Z     33
+
+-- État du permis (ETAT_DAU) --
+ETAT_DAU
+2    1644
+6    1241
+5    1146
+4     214
+
+-- Années de dépôt (AN_DEPOT) --
+AN_DEPOT
+2005      1
+2006      1
+2008      1
+2012     97
+2013    257
+2014    271
+2015    258
+2016    322
+2017    341
+2018    360
+2019    331
+2020    270
+2021    347
+2022    370
+2023    334
+2024    300
+2025    282
+2026    101
+2087      1
+
+-- Top 15 demandeurs (DENOM_DEM) par nombre de permis --
+DENOM_DEM
+DEPARTEMENT DES YVELINES                 54
+GRAND PARIS SEINE ET OISE                29
+FONDATION MALLET                         28
+REGION ILE DE FRANCE                     26
+COMMUNE DE MANTES LA VILLE               26
+COMMUNE DE POISSY                        19
+SNCF MOBILITES                           18
+LIDL                                     17
+SNCF GARES & CONNEXIONS                  16
+COMMUNE D'ORGEVAL                        16
+COMMUNE DE TRAPPES                       16
+SCE DEPARTEMENTAL INCENDIE ET SECOURS    15
+ASSOCIATION DIOCESAINE DE VERSAILLES     15
+COMMUNE DE MONTIGNY LE BRETONNEUX        15
+BOUYGUES IMMOBILIER                      14
+
+========== SIGNAUX MÉDICO-SOCIAUX (logements, personnes morales) ==========
+
+-- RES_PERS_AGEES --
+RES_PERS_AGEES
+false    3328
+true       35
+
+-- RES_HANDICAPES --
+RES_HANDICAPES
+false    3359
+true        4
+
+-- RES_SOCIALE --
+RES_SOCIALE
+false    3334
+true       29
+
+-- RES_HOTEL_SOCIALE --
+RES_HOTEL_SOCIALE
+false    3363
+
+-- RES_ETUDIANTS --
+RES_ETUDIANTS
+false    3335
+true       28
+
+-- RESIDENCE --
+RESIDENCE
+9    3249
+1      33
+5      27
+2      24
+7      21
+8       5
+6       4
+
+-- TYPE_SERVICE_PUBLIC (locaux, personnes morales) --
+TYPE_SERVICE_PUBLIC
+7    2668
+6     380
+2     375
+5     267
+4     231
+3     176
+1      89
+8      59
+
+Terminé en 53 secondes.

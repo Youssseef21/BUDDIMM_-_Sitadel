@@ -1,0 +1,18 @@
+# Fichiers nationaux Sitadel (1,3 Go) : à télécharger sur data.gouv.fr
+raw/
+
+# La note est envoyée en PDF par mail, pas versionnée
+NOTE.md
+NOTE.pdf
+build_note_pdf.py
+
+# Sorties dépassées (remplacées par cibles_78.csv et cache_annuaire.jsonl)
+annuaire_78.csv
+demandeurs_78.csv
+
+# Secrets et fichiers temporaires
+.env
+*.key
+_note.html
+__pycache__/
+*.pyc

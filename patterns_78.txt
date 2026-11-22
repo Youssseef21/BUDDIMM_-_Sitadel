@@ -1,0 +1,153 @@
+=== PATTERN 1 : les demandeurs récurrents (3 permis ou plus) ===
+478 demandeurs sur 3957 (12%) font 3113 permis sur 7092 (44%)
+                                       demandeurs  permis
+famille                                                  
+collectivité / établissement public           132     929
+SCI / foncière                                122     599
+entreprise                                     80     505
+promoteur / constructeur                       74     505
+bailleur social                                30     362
+ESS : association / fondation                  27     168
+exploitation agricole                           6      21
+opérateur santé / médico-social privé           5      18
+non déterminé                                   2       6
+
+=== PATTERN 2 : associations, fondations et opérateurs médico-sociaux qui construisent ===
+179 structures, 361 permis
+                                                             denomination                  sous_type  nb_permis  derniere
+                                                         FONDATION MALLET         fondation de santé         33      2025
+                                     ASSOCIATION DIOCESAINE DE VERSAILLES      association cultuelle         19      2025
+                                      FEDERATION FRANCAISE FOOTBALL - FFF                association         12      2026
+                                                              AVENIR APEI association médico-sociale         10      2026
+                                                      OGEC SAINTE THERESE                association          7      2016
+                                                ASSOCIATION DELOS APEI 78 association médico-sociale          6      2024
+                                                APAJH COMITE DES YVELINES association médico-sociale          6      2025
+                                               SCOUTS ET GUIDES DE FRANCE                association          6      2023
+                                                  ASS L ARCHE D AIGREFOIN association médico-sociale          6      2024
+                                                 FONDATION LEOPOLD BELLAN   fondation médico-sociale          5      2024
+                                          ASSOCIATION SCOLAIRE NOTRE DAME                association          5      2022
+                                                                BABYBULLE                     88.91A          5      2024
+                                                                HESTIA 78                association          4      2026
+ACTIONS ET RESSOURCES POUR L'INSERTION SOCIALE PAR LE SOIN ET L'EDUCATION association médico-sociale          4      2024
+                                                    CROIX ROUGE FRANCAISE association médico-sociale          4      2023
+
+=== PATTERN 3 : qui dépose les permis à vocation médico-sociale ? ===
+471 permis avec un signal médico-social
+famille
+collectivité / établissement public      157
+SCI / foncière                            70
+ESS : association / fondation             63
+promoteur / constructeur                  57
+entreprise                                47
+opérateur santé / médico-social privé     42
+bailleur social                           32
+non déterminé                              3
+
+Résidences seniors / handicapés déposées par des promoteurs ou SCI (le futur exploitant n'est pas dans Sitadel : piste à creuser) :
+                  DENOM_DEM  COMM  annee                                     signal_projet  nb_logements
+  CETTEFAMILLE PATRIMOINE 2 78615   2024                             résidence pers. âgées           1.0
+        ALTAREA COGEDIM IDF 78586   2023                             résidence pers. âgées         344.0
+     LINKCITY ILE-DE-FRANCE 78571   2022                             résidence pers. âgées          20.0
+              SCI GUTEMBERG 78361   2022                             résidence pers. âgées          90.0
+    SCI SAINT NOM GOURMANDS 78571   2022                             résidence pers. âgées         102.0
+             SNC LNC GEMINI 78043   2022                             résidence pers. âgées         106.0
+      GREEN CITY IMMOBILIER 78531   2022                             résidence pers. âgées          69.0
+LES TEMPORELLES MAGNANVILLE 78354   2022                             résidence pers. âgées          86.0
+           SAS POISSY CODOS 78498   2022                             résidence pers. âgées         354.0
+  SCCV RSS AUBERGENVILLE 78 78029   2021                             résidence pers. âgées         211.0
+        PITCH PROMOTION SNC 78490   2021                             résidence pers. âgées         127.0
+            ARCHE PROMOTION 78123   2021 résidence pers. âgées ; équipement action sociale          94.0
+                 PROMEO IDF 78517   2020                             résidence pers. âgées         124.0
+  MAUREPAS LA QUARTEFEUILLE 78383   2020                             résidence pers. âgées         100.0
+            ARCHE PROMOTION 78123   2020                             résidence pers. âgées          88.0
+
+=== PATTERN 4 : autorisés depuis plus de 3 ans, aucun chantier connu (FRAGILE) ===
+1735 permis sur 5755 autorisés avant 2023-10-31
+Attention : ~15 % des ouvertures de chantier ne remontent jamais (note SDES). Un projet de cette liste
+peut être bloqué, abandonné... ou simplement commencé sans déclaration.
+famille
+SCI / foncière                           623
+collectivité / établissement public      353
+entreprise                               333
+promoteur / constructeur                 202
+bailleur social                           71
+ESS : association / fondation             70
+exploitation agricole                     52
+non déterminé                             16
+opérateur santé / médico-social privé     15
+
+=== PATTERN 5 : nombre de permis par an (familles cibles) ===
+annee                                  2013  2014  2015  2016  2017  2018  2019  2020  2021  2022  2023  2024  2025  2026
+famille                                                                                                                  
+ESS : association / fondation            21    15    20    29    16    22    23    23    20    30    22    32    21    16
+bailleur social                          48    24    33    29    29    34    40    28    27    37    19    16    19     7
+opérateur santé / médico-social privé     4     6     4     6     6     6     0     1     5     5     6     2     0     0
+Nouveaux entrants (premier permis en 2024 ou après) parmi ces familles :
+                                                                            denomination                               famille  nb_permis  premiere
+                                                                        VALLOIRE HABITAT                       bailleur social          1      2024
+                                                                                  AFTRAL         ESS : association / fondation          1      2024
+                                             COMITE DEPARTEMENTAL DES YVELINES DE TENNIS         ESS : association / fondation          1      2026
+                                                        TENNIS CLUB DE CROISSY SUR SEINE         ESS : association / fondation          1      2024
+                                                             ASSOCIATION LE PETIT NAVIRE         ESS : association / fondation          1      2026
+                                                EGLISE EVANGELIQUE PROTEST VIE CHRETIENN         ESS : association / fondation          1      2024
+                                                          COMMUNAUTE MUSULMANE DE POISSY         ESS : association / fondation          1      2024
+                                                           EGLISE DE PENTECOTE DE FRANCE         ESS : association / fondation          1      2024
+                                                 CTRE RADIOLOGI DES DRS BOONE ET LADARRE opérateur santé / médico-social privé          1      2024
+                                                                FONDATION JEAN POUPELAIN         ESS : association / fondation          1      2024
+                                                          INSERTION SOLIDARITE AUTONOMIE         ESS : association / fondation          1      2026
+                                                         SOCIETE PROTECTRICE DES ANIMAUX         ESS : association / fondation          1      2026
+                                                                     FONDATION JOHN BOST         ESS : association / fondation          1      2025
+                                                       ASSOCIATION DES DAMES DU CALVAIRE         ESS : association / fondation          1      2026
+                                                                      EGLISE EVANGELIQUE         ESS : association / fondation          1      2024
+                                                 ASS MAISON CAMPAN - INSTITUT NOTRE DAME         ESS : association / fondation          1      2026
+                                                                       CSE SAFRAN VELIZY         ESS : association / fondation          1      2025
+                                                          ASSOCIATION AVICENNE EDUCATION         ESS : association / fondation          1      2024
+                                     ASSOCIATION DES MUSULMANS DE MONTIGNY LE BRETONNEUX         ESS : association / fondation          1      2025
+ASSOCIATION SOCIO-CULTURELLE DES MUSULMANS DE SAINT-CYR-L'ECOLE ET DE FONTENAY-LE-FLEURY         ESS : association / fondation          1      2026
+                           ASSOCIATION VIVRE ENSEMBLE NOS CULTURES A COIGNIERES  (AVECC)         ESS : association / fondation          1      2024
+                                                              LA CENSE FONDS DE DOTATION         ESS : association / fondation          1      2026
+                                                              ESPERANCE BANLIEUES POISSY         ESS : association / fondation          1      2024
+                                                                        MAISON MADELEINE         ESS : association / fondation          1      2024
+                                                                        ALEF BETH CHAOUL         ESS : association / fondation          2      2025
+                                           ASSOCIATION NOUVEAUX HORIZONS ROSNY SUR SEINE         ESS : association / fondation          1      2024
+                                            FAMILLES ET SCOLARITE EN PAYS DE RAMBOUILLET         ESS : association / fondation          1      2024
+                                                 ON PREFERE JOUER - THEATRE DE L'ARMOIRE         ESS : association / fondation          1      2025
+                                    ASSOCIATION DES CITOYENS MUSULMANS PISCIACAIS (ACMP)         ESS : association / fondation          1      2026
+  LA COMMUNAUTE DES CHRETIENS - MOUVEMENT POUR UN RENOUVEAU RELIGIEUX - EN ILE DE FRANCE         ESS : association / fondation          1      2024
+                                                                             MES TALENTS         ESS : association / fondation          2      2024
+                               ENTRAIDE FRANCE-TURQUIE, EDUCATION, AVENIR DE LA JEUNESSE         ESS : association / fondation          1      2026
+                                  ASSOCIATION ECHANGE ET PARTAGE LES CLAYES - VILLEPREUX         ESS : association / fondation          1      2026
+(2026 est incomplet : extraction d'octobre)
+
+=== LISTE DES CIBLES (score >= 3) ===
+274 demandeurs retenus | exclus car cessés : 48
+score
+8      4
+7      7
+6     13
+5     55
+4     76
+3    119
+
+Top 20 :
+                                                             denomination                               famille  score                                                                                                                                                                             raisons
+                                                APAJH COMITE DES YVELINES         ESS : association / fondation      8 cœur de cible : ESS : association / fondation (médico-social / santé) ; 3 projet(s) médico-social(aux) ; récurrent (6 permis) ; actif récemment (2025) ; confirmé FINESS (annuaire)
+                                                  ASS L ARCHE D AIGREFOIN         ESS : association / fondation      8 cœur de cible : ESS : association / fondation (médico-social / santé) ; 1 projet(s) médico-social(aux) ; récurrent (6 permis) ; actif récemment (2024) ; confirmé FINESS (annuaire)
+                                                ASSOCIATION DELOS APEI 78         ESS : association / fondation      8 cœur de cible : ESS : association / fondation (médico-social / santé) ; 5 projet(s) médico-social(aux) ; récurrent (6 permis) ; actif récemment (2024) ; confirmé FINESS (annuaire)
+ACTIONS ET RESSOURCES POUR L'INSERTION SOCIALE PAR LE SOIN ET L'EDUCATION         ESS : association / fondation      8 cœur de cible : ESS : association / fondation (médico-social / santé) ; 4 projet(s) médico-social(aux) ; récurrent (4 permis) ; actif récemment (2024) ; confirmé FINESS (annuaire)
+                                                              AVENIR APEI         ESS : association / fondation      7                             cœur de cible : ESS : association / fondation (médico-social / santé) ; 8 projet(s) médico-social(aux) ; récurrent (10 permis) ; actif récemment (2026)
+                                                 FONDATION LEOPOLD BELLAN         ESS : association / fondation      7                              cœur de cible : ESS : association / fondation (médico-social / santé) ; 3 projet(s) médico-social(aux) ; récurrent (5 permis) ; actif récemment (2024)
+                                                                BABYBULLE opérateur santé / médico-social privé      7                      cœur de cible : opérateur santé / médico-social privé (médico-social / santé) ; 4 projet(s) médico-social(aux) ; récurrent (5 permis) ; actif récemment (2024)
+                                  SAUVEGARDE ENFANCE ADOLESCENCE YVELINES         ESS : association / fondation      7                              cœur de cible : ESS : association / fondation (médico-social / santé) ; 3 projet(s) médico-social(aux) ; récurrent (4 permis) ; actif récemment (2025)
+                                             HAUTS-DE-SEINE HABITAT - OPH                       bailleur social      7                                                       bailleur social ; 1 projet(s) médico-social(aux) ; récurrent (3 permis) ; actif récemment (2025) ; confirmé FINESS (annuaire)
+                                        HOPITAL PRIVE DE L'OUEST PARISIEN opérateur santé / médico-social privé      7                  cœur de cible : opérateur santé / médico-social privé (médico-social / santé) ; 3 projet(s) médico-social(aux) ; récurrent (3 permis) ; confirmé FINESS (annuaire)
+                                              ASSOCIATION LE PETIT NAVIRE         ESS : association / fondation      7                           cœur de cible : ESS : association / fondation (médico-social / santé) ; 1 projet(s) médico-social(aux) ; actif récemment (2026) ; confirmé ESS (annuaire)
+                                                           IMMOBILIERE 3F                       bailleur social      6                                                                                   bailleur social ; 1 projet(s) médico-social(aux) ; récurrent (48 permis) ; actif récemment (2026)
+              LES RESIDENCES SOCIETE ANONYME D'HABITATIONS A LOYER MODERE                       bailleur social      6                                                                                   bailleur social ; 2 projet(s) médico-social(aux) ; récurrent (36 permis) ; actif récemment (2026)
+                                 ENTREPRISE SOCIALE POUR L'HABITAT DOMNIS                       bailleur social      6                                                                                   bailleur social ; 3 projet(s) médico-social(aux) ; récurrent (29 permis) ; actif récemment (2025)
+          CDC HABITAT SOCIAL SOCIETE ANONYME D'HABITATIONS A LOYER MODERE                       bailleur social      6                                                                                   bailleur social ; 4 projet(s) médico-social(aux) ; récurrent (20 permis) ; actif récemment (2026)
+                                                                  LOGIREP                       bailleur social      6                                                                                    bailleur social ; 3 projet(s) médico-social(aux) ; récurrent (7 permis) ; actif récemment (2026)
+                                                          LA MAISON BLEUE opérateur santé / médico-social privé      6                                               cœur de cible : opérateur santé / médico-social privé (médico-social / santé) ; 4 projet(s) médico-social(aux) ; récurrent (4 permis)
+                                                                    ORPEA opérateur santé / médico-social privé      6                                               cœur de cible : opérateur santé / médico-social privé (médico-social / santé) ; 3 projet(s) médico-social(aux) ; récurrent (3 permis)
+                                                          PEOPLE AND BABY opérateur santé / médico-social privé      6                                               cœur de cible : opérateur santé / médico-social privé (médico-social / santé) ; 3 projet(s) médico-social(aux) ; récurrent (3 permis)
+                                                       CLINIQUE D'YVELINE opérateur santé / médico-social privé      6                                         cœur de cible : opérateur santé / médico-social privé (médico-social / santé) ; 2 projet(s) médico-social(aux) ; confirmé FINESS (annuaire)
